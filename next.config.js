@@ -1,3 +1,5 @@
-const withPlugins = require("next-compose-plugins");
+const nextTranslate = require("next-translate");
 
-module.exports = withPlugins([], {});
+module.exports = nextTranslate({
+  reactStrictMode: true,
+});

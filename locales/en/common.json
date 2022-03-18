@@ -6,5 +6,21 @@
   "language": {
     "tr": "🇹🇷 Türkçe",
     "en": "🇺🇸 English"
-  }
+  },
+  "welcome": "Welcome",
+  "welcomeMessage": "Welcome to ShareHome, the independant way to find shelter from the russian invaders. You may search for local sponsors in the city/country you are in and apply to reside with the sponsor.",
+  "login": "Login",
+  "forgotPassword": "Forgot Password?",
+  "email": "Email Address",
+  "password": "Password",
+  "show": "Show",
+  "hide": "Hide",
+  "signUp":"Sign Up",
+  "newHere": "New here",
+  "name": "Your name",
+  "exist": "Already have an account",
+  "register": "Register",
+  "refugee": "Refugee",
+  "host": "Host",
+  "selectAccountType": "Select an Account Type"
 }

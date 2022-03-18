@@ -1,1 +1,2 @@
-export { increase, decrease } from "@redux/slices/counter";
+export { login } from "@redux/slices/account";
+export { setCredentials } from "@redux/slices/auth"
