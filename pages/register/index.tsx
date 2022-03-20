@@ -72,7 +72,6 @@ const Register: React.FC = () => {
             const { data } = await register(state);
             if (data) {
                 reduxDispatch(setCredentials(data));
-                // setValue(data.token)
             }
         } catch (err) {
             console.log(err);

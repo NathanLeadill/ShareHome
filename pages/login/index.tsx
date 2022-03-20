@@ -30,7 +30,7 @@ const CFaLock = chakra(FaLock);
 type FormActionPayload = {
     payload: {
         key: string;
-        value: string;
+        value: string | boolean;
     }
     type: string;
 }
@@ -59,13 +59,12 @@ const Login: React.FC = () => {
     const { t, lang } = useTranslation('common')
     const reduxDispatch = useAppDispatch()
     const [state, dispatch] = useReducer(reducer, initial);
-    const [showPassword, setShowPassword] = useState(false)
     const [login, { isLoading }] = useLoginMutation();
     const [value, setValue, remove] = useLocalStorage('token');
 
 
     const states = useAppSelector(state => state)
-    const handleShowClick = () => setShowPassword(!showPassword)
+    const handleShowClick = () => dispatch({ type: 'UPDATE', payload: { key: 'showPassword', value: !state.showPassword }})
 
     const handleLogin = async () => {
         try {
@@ -127,12 +126,12 @@ const Login: React.FC = () => {
                                         children={<CFaLock color="gray.300" />}
                                     />
                                     <Input
-                                        type={showPassword ? "text" : "password"}
+                                        type={state.showPassword ? "text" : "password"}
                                         placeholder={t('password')}
                                     />
                                     <InputRightElement width="4.5rem">
                                         <Button h="1.75rem" size="sm" onClick={handleShowClick}>
-                                            {showPassword ? t('hide') : t('show')}
+                                            {state.showPassword ? t('hide') : t('show')}
                                         </Button>
                                     </InputRightElement>
                                 </InputGroup>

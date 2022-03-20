@@ -1,13 +1,22 @@
 import React from "react";
 import { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "@definitions/chakra/theme";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+// import theme from "@definitions/chakra/theme";
 import "@styles/global.scss";
 import { Provider } from "react-redux";
 import store from "@redux/store";
 import Nav from "@components/nav";
 import { Footer } from "@components/footer";
 import Head from "next/head";
+
+import { StepsStyleConfig as Steps } from 'chakra-ui-steps';
+
+const theme = extendTheme({
+  components: {
+    Steps,
+  },
+});
+
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
